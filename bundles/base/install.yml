@@ -84,7 +84,7 @@
       pip: name={{item}}
       with_items:
         - django 
-        - django-extension
+        - django-extensions
         - djangorestframework
 
     - name: make hackoregon dir
