@@ -10,13 +10,13 @@ echo "AWS_REGION: ${AWS_REGION}"
 echo -n 'DST_URL: '
 echo $DST_URL | tee url
 
-#sleep 5
+sleep 5
 
 ## Update version of dst package and try to upload package to PyPi
 #< ../manager/setup.py.j2 sed "s/{{version}}/${DST_VERSION}/" > ../manager/setup.py
 #( cd ../manager; python setup.py sdist upload )
 
-if [ !-f boxes/isos/ubuntu-14.04.3-server-amd64.iso ]; then
+if [ !-f isos/ubuntu-14.04.3-server-amd64.iso ]; then
   cd isos; wget http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso
 fi
 
