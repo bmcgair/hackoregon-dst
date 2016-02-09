@@ -25,7 +25,7 @@
       pip: name=numpy state=latest
 
     - name: matplotlib - install
-      sudo: yes
+      become: yes
       apt: pkg={{ item }} state=latest
       with_items:
         - python-matplotlib
