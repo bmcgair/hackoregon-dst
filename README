@@ -1,0 +1,9 @@
+This is a small for of Jeroen Janssens data-science-toolbox to support the HackOregon project.
+
+How to build:
+
+Install ansible and packer.
+Clone this repository locally.
+cd to the build directory
+set your aws credentials and account info in the variables.json file
+Make sure you have the right credentials in ~/.aws/credentials too
