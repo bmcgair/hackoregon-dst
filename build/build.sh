@@ -6,6 +6,10 @@ DST_BOX="hackoregon-dst-${DST_VERSION}.box"
 DST_URL="https://hackoregon-dst.s3.amazonaws.com/${DST_BOX}"
 AWS_REGION=$(cat ~/.aws/config | grep region | cut -d= -f2 | tr -d ' ')
 
+if [ ! -f isos/ubuntu-14.04.3-server-amd64.iso ]; then
+  cd isos; wget http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso
+fi
+
 echo "AWS_REGION: ${AWS_REGION}" 
 echo -n 'DST_URL: '
 echo $DST_URL | tee url
