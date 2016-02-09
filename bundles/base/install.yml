@@ -81,7 +81,7 @@
         - pgadmin3
 
     - name: install hack oregon pip packages
-      pip: pkg={{item}} state=latest
+      pip: pkg={{item}}
       with_items:
         - django
         - django-extensions
