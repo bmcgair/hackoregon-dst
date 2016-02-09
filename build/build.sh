@@ -43,5 +43,5 @@ mv packer_virtualbox-iso_virtualbox.box boxes/$DST_BOX #
 aws s3 cp boxes/$DST_BOX s3://hackoregon-dst/$DST_BOX --acl public-read
 
 ###Update local Vagrant box
-vagrant box remove dst
+vagrant box remove hackoregon-dst
 vagrant box add dst boxes/$DST_BOX
