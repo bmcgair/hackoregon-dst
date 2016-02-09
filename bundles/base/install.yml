@@ -1,7 +1,7 @@
 # Data Science Toolbox base install
 ---
 - hosts: 127.0.0.1
-  sudo: yes
+  become: yes
   connection: local
   tasks:
     - name: Install dst command-line tool
@@ -71,10 +71,11 @@
     - name: install hack oregon pacakges
       apt_repository: repo='deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main' state=present update_cache=yes
 
+    - apt: name=ansible state=present force=yes
+
     - name: Install hack oregon apt packages
       apt: pkg={{item}} state=latest
       with_items:
-        - ansible
         - postgresql
         - postgresql-contrib
         - pgadmin3
