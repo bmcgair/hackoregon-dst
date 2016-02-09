@@ -80,7 +80,7 @@
         - postgresql-contrib
         - pgadmin3
 
-    - name: Install hack oregon apt packages
+    - name: Install hack oregon pip packages
       pip: name={{item}}
       with_items:
         - django 
