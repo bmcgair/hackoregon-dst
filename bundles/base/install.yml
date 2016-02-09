@@ -71,12 +71,20 @@
     - name: install hack oregon pacakges
       apt_repository: repo='deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main' state=present update_cache=yes
 
-    - apt: name=ansible state=present force=yes
-    - apt: name=postgresql state=present
-    - apt: name=postgresql-contrib state=present
-    - pip: name=django
-    - pip: name=django-extensions
-    - pip: name=djangorestframework
+    - name: Install hack oregon apt packages
+      apt: pkg={{item}} state=latest
+      with_items:
+        - ansible
+        - postgresql
+        - postgresql-contrib
+        - pgadmin3
+
+    - name: install hack oregon pip packages
+      pip: pkg={{item}} state=latest
+      with_items:
+        - django
+        - django-extensions
+        - djangorestframework
 
     - name: make hackoregon dir
       file: path=/hackoregon owner=root mode=0755 state=directory
