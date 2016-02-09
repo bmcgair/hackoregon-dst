@@ -7,3 +7,7 @@ Clone this repository locally.
 cd to the build directory
 set your aws credentials and account info in the variables.json file
 Make sure you have the right credentials in ~/.aws/credentials too
+./build.sh
+
+On the first run the build script will download the ubuntu server ISO.
+This might take a very long time, so I'd suggest not deleting it.

@@ -41,3 +41,4 @@ packer_cache
 *.iso
 *.box
 output-virtualbox-iso
+isos/
