@@ -20,10 +20,6 @@ sleep 5
 #< ../manager/setup.py.j2 sed "s/{{version}}/${DST_VERSION}/" > ../manager/setup.py
 #( cd ../manager; python setup.py sdist upload )
 
-if [ !-f isos/ubuntu-14.04.3-server-amd64.iso ]; then
-  cd isos; wget http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso
-fi
-
 #echo "Current boxes:"
 #aws s3api list-objects --bucket data-science-toolbox | jq '.Contents[].Key' | tr -d \"
 
@@ -44,4 +40,4 @@ aws s3 cp boxes/$DST_BOX s3://hackoregon-dst/$DST_BOX --acl public-read
 
 ###Update local Vagrant box
 vagrant box remove hackoregon-dst
-vagrant box add dst boxes/$DST_BOX
+vagrant box add hackoregon-dst boxes/$DST_BOX
