@@ -96,6 +96,16 @@
       "type": "vagrant",
       "keep_input_artifact": true,
       "only": ["virtualbox-iso"]
-    }
+    },
+    {
+      "type": "atlas",
+      "only": ["virtualbox-iso"],
+      "token": "{{user `atlas_token`}}",
+      "artifact": "bmcgair/hackoregon-dst",
+      "artifact_type": "vagrant.box",
+      "metadata": {
+        "created_at": "{{timestamp}}"
+      }
+   }
   ]
 }
