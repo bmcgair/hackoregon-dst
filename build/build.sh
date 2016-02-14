@@ -31,8 +31,8 @@ rm -rf packer_virtualbox-iso_virtualbox.box
 
 #1. build AMI and Vagrant with Packer
 echo "Build AMI and Vagrant with Packer"
-packer build -var-file=variables.json -var "dst_version=${DST_VERSION}" -only=virtualbox-iso template.json 
-#packer build -var-file=variables.json -var "dst_version=${DST_VERSION}" template.json
+#packer build -var-file=variables.json -var "dst_version=${DST_VERSION}" -only=virtualbox-iso template.json 
+packer build -var-file=variables.json -var "dst_version=${DST_VERSION}" template.json
 
 ##2. Rename and upload Vagrant box to S3
 echo "Rename and upload Vagrant box to S3"
