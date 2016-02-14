@@ -4,6 +4,8 @@
   become: yes
   connection: local
   tasks:
+    - easy_install: name=pip state=latest
+
     - name: Install dst command-line tool
       pip: name=dst state=latest
 
@@ -86,6 +88,7 @@
         - django 
         - django-extensions
         - djangorestframework
+        - jupyter
 
     - name: make hackoregon dir
       file: path=/hackoregon owner=root mode=0755 state=directory
